@@ -1,0 +1,26 @@
+<%- include('partials/header') -%>
+<div class="container mx-auto">
+    
+  <div class="m-6">
+    <%- include('partials/post', {user: user}) -%>
+    <div class="container center">
+        <%- include('partials/stat') -%>
+    </div>
+        <div>
+            <p><strong>User Name</strong>: <%= user.userName %></p>
+            <p><strong>Email</strong>: <%= user.email %></p>
+            <a href="/logout" class="col-3 btn btn-secondary">Logout</a>
+        </div>
+      <ul class="row list-unstyled">
+        <% for(var i=0; i<posts.length; i++) {%>
+          <li class="col-6 justify-content-between mt-5">
+            <a href="/post/<%= posts[i]._id%>">
+              <img class="mask mask-hexagon object-cover h-48 w-48" src="<%= posts[i].image%>">
+            </a>
+          </li>
+        <% } %>
+        </ul>
+    </div>
+  </div>
+</div>
+<%- include('partials/footer') -%>

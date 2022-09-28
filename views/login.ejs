@@ -1,0 +1,28 @@
+<%- include('partials/header') -%>
+<div class="flex justfy-content-center">
+  <div class="card w-96 bg-neutral text-neutral-content">
+      <div class="card-body items-center text-center">
+        <h2 class="card-title">Login!</h2>
+        <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
+          <div class="alert alert-danger"><iconify-icon icon="akar-icons:circle-alert"></iconify-icon><%= el.msg %></div>
+          <% }) %> <% } %> <% if (locals.messages.info) { %> <%
+          messages.info.forEach( el => { %>
+          <div class="alert alert-info"><iconify-icon icon="akar-icons:circle-alert"></iconify-icon><%= el.msg %></div>
+          <% }) %> <% } %>
+        <form action="/login" method="POST">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" placeholder="Type here" class="form-control input input-bordered input-secondary w-full max-w-xs" id="exampleInputEmail1" name="email" aria-describedby="emailHelp"/>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" placeholder="Type here" class="form-control input input-bordered input-secondary w-full max-w-xs" id="exampleInputPassword1" name="password"/>
+            </div>
+            <div class="card-actions justify-center">
+              <button type="submit" class="btn btn-ghost">Submit</button>
+            </div>
+        </form>
+      </div>
+  </div>
+</div>
+<%- include('partials/footer') -%>
