@@ -1,4 +1,4 @@
-const Post = require("../models/Post");
+const JokeBank = require("../models/JokeBank");
 // mod.cjs
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
@@ -14,11 +14,11 @@ module.exports = {
   },
   getJoke: async (req, res) => {
     try {
-    //   const jokes = await Joke.find({  });
-    let joke = await fetch("https://geek-jokes.sameerkumar.website/api?format=json")
-    joke = await joke.json()
-    console.log(joke.joke)
-      res.render("joke.ejs", { joke: joke, user: req.user});
+    const jokes = await JokeBank.find().sort({ likes: -1 }).lean();
+    const max = 400
+    const randomInd = Math.floor(Math.random() * max)
+    console.log(jokes[randomInd])
+      res.render("joke.ejs", { joke: jokes[randomInd], user: req.user});
     } catch (err) {
       console.log(err);
     }
