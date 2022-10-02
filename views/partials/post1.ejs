@@ -1,9 +1,9 @@
 <div class="hero min-h-screen bg-base-200">
     <div class="hero-content flex-col lg:flex-row-reverse">
       <div class="text-center lg:text-left">
-        <h1 class="text-5xl font-bold">Enlighten the GEEKS </h1>
-        <h1 class="text-center text-5xl font-bold"><%= user.userName %>!</h1>
-        <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+        <h1 class="text-5xl font-bold">Welcome,</h1>
+        <h1 class="text-center text-5xl font-bold"><%= user.userName %>.</h1>
+        <p class="py-6">Would you like to share a joke to the fellow GEEKS?</p>
       </div>
       <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
         <div class="card-body">
@@ -22,31 +22,26 @@
                 </div>
                 <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
             </form> -->
-            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+            <form action="/joke/createJoke" method="POST">
                 <div class="form-control mt-6"">
                     <label class="label">
-                    <span class="label-text">title</span>
+                    <span class="label-text">Setup</span>
                     </label>
-                    <textarea class="textarea textarea-secondary" placeholder="title" id="title" name="title"></textarea>
+                    <textarea class="textarea textarea-secondary" placeholder="Setup" id="setup" name="setup"></textarea>
                 </div>
                 <div class="form-control mt-6"">
                     <label class="label">
-                    <span class="label-text">caption</span>
+                    <span class="label-text">Punchline</span>
                     </label>
-                    <textarea class="textarea textarea-primary" placeholder="Punchline" id="caption" name="caption"></textarea>
-                </div>
-                
-                <div class="form-control mt-6"">
-                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300" for="imageUpload">Upload Image</label>
-                    <input class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" type="file" id="imageUpload" name="file">
+                    <textarea class="textarea textarea-primary" placeholder="Punchline" id="punchline" name="punchline"></textarea>
                 </div>
                 
 
                 <div class="form-control mt-10">
-                    <button class="btn btn-primary">Go GEEK</button>
+                    <button class="btn btn-primary">Share :)</button>
                 </div>
             </form>
         </div>
       </div>
     </div>
-  </div>
+</div>
