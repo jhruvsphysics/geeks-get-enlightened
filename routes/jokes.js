@@ -4,8 +4,8 @@ const jokesController = require("../controllers/jokes");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 //Post Routes - simplified for now
-router.get("/getJoke", ensureAuth, jokesController.getJoke);
-router.get("/getJoke/:id", ensureAuth, jokesController.getJokeID);
+router.get("/getJoke", jokesController.getJoke);
+router.get("/getJoke/:id", jokesController.getJokeID);
 router.post("/createJoke", ensureAuth, jokesController.createJoke);
 router.get("/feed", jokesController.getJokeFeed);
 router.put("/likeJoke/:id", jokesController.likeJoke);

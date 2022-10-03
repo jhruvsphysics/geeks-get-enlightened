@@ -14,13 +14,13 @@
                 <h3 class="text-center"><%= jokes[i].views %></h3>
             </button> 
             <!-- The button to open modal -->
-            <label for="my-modal-4" class="btn btn-error modal-button">
+            <label for="my-modal-<%= i %>" class="btn btn-error modal-button">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="h-6 w-6" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 24h-14c-1.104 0-2-.896-2-2v-17h-1v-2h6v-1.5c0-.827.673-1.5 1.5-1.5h5c.825 0 1.5.671 1.5 1.5v1.5h6v2h-1v17c0 1.104-.896 2-2 2zm-14-2.5c0 .276.224.5.5.5h13c.276 0 .5-.224.5-.5v-16.5h-14v16.5zm5-18.5h4v-1h-4v1z"/></svg>
             </label>
 
             <!-- Put this part before </body> tag -->
-            <input type="checkbox" id="my-modal-4" class="modal-toggle" />
-            <label for="my-modal-4" class="modal cursor-pointer">
+            <input type="checkbox" id="my-modal-<%= i %>" class="modal-toggle" />
+            <label for="my-modal-<%= i %>" class="modal cursor-pointer">
                 <label class="modal-box relative" for="">
                     <h3 class="text-lg font-bold">CONFIRM</h3>
                     <p class="py-4">Are you sure you want to delete this item?</p>
