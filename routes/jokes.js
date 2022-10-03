@@ -3,7 +3,7 @@ const router = express.Router();
 const jokesController = require("../controllers/jokes");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
-//Post Routes - simplified for now
+//Joke Routes - simplified for now
 router.get("/getJoke", jokesController.getJoke);
 router.get("/getJoke/:id", jokesController.getJokeID);
 router.post("/createJoke", ensureAuth, jokesController.createJoke);
