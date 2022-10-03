@@ -4,7 +4,7 @@ module.exports = {
     getProfile: async (req, res) => {
         try {
             const jokes = await JokeBank.find({user: req.user.id})
-            res.render("profile1.ejs", { jokes: jokes, user: req.user });
+            res.render("profile.ejs", { jokes: jokes, user: req.user });
         } catch (err) {
             console.log(err);
         }
