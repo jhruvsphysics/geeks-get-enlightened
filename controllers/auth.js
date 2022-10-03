@@ -88,6 +88,8 @@ exports.postSignup = (req, res, next) => {
     userName: req.body.userName,
     email: req.body.email,
     password: req.body.password,
+    total_likes: 0,
+    total_views: 0,
   });
 
   User.findOne(

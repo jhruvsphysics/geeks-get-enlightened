@@ -1,10 +1,6 @@
 const mongoose = require("mongoose");
 
 const JokeBankSchema = new mongoose.Schema({
-  type: {
-    type: String,
-    require: true,
-  },
   setup: {
     type: String,
     require: true,
