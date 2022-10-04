@@ -60,6 +60,7 @@ app.use("/joke", jokeRoutes);
 app.use("/profile", profileRoutes);
 
 //Server Running
-app.listen(process.env.PORT, () => {
-  console.log("Server is running, you better catch it!");
+const port = process.env.PORT || 2121
+app.listen(port, () => {
+  console.log(`Server is running oon ${port}, you better catch it!`);
 });
